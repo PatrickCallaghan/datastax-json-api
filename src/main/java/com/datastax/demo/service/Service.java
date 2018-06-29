@@ -22,4 +22,8 @@ public class Service {
 	public String getJsonForTable(String keyspace, String table, String partitionKey, Object partitionValue){
 		return dao.getJsonForTable(keyspace, table, partitionKey, partitionValue);
 	}
+
+	public String getJsonForTable(String keyspace, String table, int limit) {
+		return dao.getJsonForTable(keyspace, table, 100);
+	}
 }

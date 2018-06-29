@@ -48,4 +48,15 @@ public class SampleWS {
 		String response = service.getJsonForTable(keyspace, table, partitionKey, partitionValue);		
 		return Response.status(Status.OK).entity(response).build();
 	}
+	
+	@GET
+	@Path("/get/data/{keyspace}/{table}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response getDataWithoutKey(@PathParam("keyspace") String keyspace, @PathParam("table") String table){
+				
+		logger.info("Getting Json for " + keyspace + "." + table);
+		
+		String response = service.getJsonForTable(keyspace, table, 100);		
+		return Response.status(Status.OK).entity(response).build();
+	}
 }

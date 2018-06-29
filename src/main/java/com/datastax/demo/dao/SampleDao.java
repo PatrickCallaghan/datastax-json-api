@@ -56,7 +56,30 @@ public class SampleDao {
 		}else{
 			//return Arrays.asList("empty resultset");
 			return "empty resultset";
-		}
-		
+		}		
 	}
+	
+	public String getJsonForTable(String keyspace, String table, int limit){
+		
+		Statement cql = QueryBuilder.select().all().json().from(keyspace, table).limit(limit);
+				
+		logger.info("cql=" + cql.toString());
+		ResultSet resultSet = session.execute(cql);
+		
+		if (!resultSet.isExhausted()){
+			List<Row> all = resultSet.all();
+			List<String> jsons = new ArrayList<String>();
+			StringBuffer buffer = new StringBuffer();
+			
+			for (Row row : all){
+				jsons.add(row.getString(0));
+				buffer.append(row.getString(0));
+			}
+			return buffer.toString();
+		}else{
+			//return Arrays.asList("empty resultset");
+			return "empty resultset";
+		}		
+	}
+
 }
