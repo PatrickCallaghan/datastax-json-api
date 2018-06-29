@@ -13,7 +13,14 @@ mvn jetty:run -DcontactPoints=localhost
 To get JSON for a table and partition, use the following (replace localhost with your node id or name in all uris).
 ```
 
-http://localhost:8080/datastax-json-api/rest/get/data/<keyspace>/<table/<partitonkey>/<partitionvalue>
+http://localhost:8080/datastax-json-api/rest/get/data/<keyspace>/<table>/<partitonkey>/<partitionvalue>
+	
+```
+
+To get JSON for a table and a default limit of 100, use the following 
+```
+
+http://localhost:8080/datastax-json-api/rest/get/data/<keyspace>/<table
 	
 ```
 
