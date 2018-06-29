@@ -6,7 +6,7 @@ This is a simple converter to change the contents of a row into JSON.
 To run the web app run (replace localhost with your a contact point for your DSE cluster).
 ```
 
-		mvn jetty:run -DcontactPoints=localhost
+	mvn jetty:run -DcontactPoints=localhost
 		
 ```
 
