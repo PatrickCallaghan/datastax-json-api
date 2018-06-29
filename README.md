@@ -29,7 +29,8 @@ Another example using https://github.com/PatrickCallaghan/datastax-banking-iot
 
 ```
 
-	http://localhost:8080/datastax-json-api/rest/get/data/datastax_banking_iot/latest_transactions/cc_no/1234123412415521
+http://localhost:8080/datastax-json-api/rest/get/data/datastax_banking_iot/latest_transactions/cc_no/1234123412415521
+
 ```
 
 
